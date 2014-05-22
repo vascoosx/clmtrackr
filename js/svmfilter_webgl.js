@@ -391,38 +391,36 @@ var webglFilter = function() {
     if ('lbp' in filters || 'sobel' in filters) {
       // calculate position of vertex rectangles for gradient/lbp program
       var gradRectangles = [];
-      for (var i = 0;i < numBlocks;i++) {
-        //first triangle
-        gradRectangles = gradRectangles.concat(
-          [-1.0, 1.0, 
-          1.0, 1.0,
-          -1.0, -1.0]
-        );
-        //second triangle
-        gradRectangles = gradRectangles.concat(
-          [-1.0, -1.0, 
-          1.0, 1.0,
-          1.0, -1.0]
-        );
-      }
+      //first triangle
+      gradRectangles = gradRectangles.concat(
+        [-1.0, 1.0, 
+        1.0, 1.0,
+        -1.0, -1.0]
+      );
+      //second triangle
+      gradRectangles = gradRectangles.concat(
+        [-1.0, -1.0, 
+        1.0, 1.0,
+        1.0, -1.0]
+      );
+      
       gradRectangles = new Float32Array(gradRectangles);
       
       // calculate position of image rectangles to draw out
       var gradIRectangles = [];
-      for (var i = 0;i < numBlocks;i++) {
-        //first triangle
-        gradIRectangles = gradIRectangles.concat(
-          [0.0, 1.0, 
-          1.0, 1.0,
-          0.0, 0.0]
-        );
-        //second triangle
-        gradIRectangles = gradIRectangles.concat(
-          [0.0, 0.0, 
-          1.0, 1.0,
-          1.0, 0.0]
-        );
-      }
+      //first triangle
+      gradIRectangles = gradIRectangles.concat(
+        [0.0, 1.0, 
+        1.0, 1.0,
+        0.0, 0.0]
+      );
+      //second triangle
+      gradIRectangles = gradIRectangles.concat(
+        [0.0, 0.0, 
+        1.0, 1.0,
+        1.0, 0.0]
+      );
+      
       gradIRectangles = new Float32Array(gradIRectangles);
     }
 
