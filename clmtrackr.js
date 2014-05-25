@@ -1999,7 +1999,7 @@ var webglFilter = function() {
     gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER)
     
     // draw to framebuffer
-    gl.drawArrays(gl.TRIANGLES, 0, patchCells*6);
+    gl.drawArrays(gl.TRIANGLES, 0, 6);
     
     //gl.finish();
     
